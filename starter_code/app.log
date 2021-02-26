@@ -46,3 +46,7 @@
 2021-02-26 10:22:22,441 DEBUG c.e.d.c.UserController [main] Class: UserController method: createUser - Response: BAD_REQUEST . Either length is less than 7 or pass and conf pass do not match.
 2021-02-26 10:22:22,442 INFO c.e.d.c.UserController [main] Class: UserController method: createUser - Request: username= test
 2021-02-26 10:22:22,442 INFO c.e.d.c.UserController [main] Class: UserController method: createUser - Response: OK 
+2021-02-26 11:36:08,783 INFO c.e.d.SareetaApplicationTests [main] Starting SareetaApplicationTests on BAMBOO-DELL with PID 2148 (started by quoch in C:\Users\quoch\Udacity\Course4\nd035-c4-Security-and-DevOps\starter_code)
+2021-02-26 11:36:08,791 DEBUG c.e.d.SareetaApplicationTests [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2021-02-26 11:36:08,792 INFO c.e.d.SareetaApplicationTests [main] No active profile set, falling back to default profiles: default
+2021-02-26 11:36:12,911 INFO c.e.d.SareetaApplicationTests [main] Started SareetaApplicationTests in 4.35 seconds (JVM running for 5.741)
