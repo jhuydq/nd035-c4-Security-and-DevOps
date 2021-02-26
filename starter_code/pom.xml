@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>auth-course</artifactId>
-	<packaging>war</packaging>
+<!--	<packaging>war</packaging>-->
 	<version>0.0.1-SNAPSHOT</version>
 	<name>auth-course</name>
 	<description>Demo project for Spring Boot</description>
@@ -49,20 +49,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<artifactId>junit-jupiter</artifactId>
-					<groupId>org.junit.jupiter</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>junit-vintage-engine</artifactId>
-					<groupId>org.junit.vintage</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>mockito-junit-jupiter</artifactId>
-					<groupId>org.mockito</groupId>
-				</exclusion>
-			</exclusions>
+<!--			<exclusions>-->
+<!--				<exclusion>-->
+<!--					<artifactId>junit-jupiter</artifactId>-->
+<!--					<groupId>org.junit.jupiter</groupId>-->
+<!--				</exclusion>-->
+<!--				<exclusion>-->
+<!--					<artifactId>junit-vintage-engine</artifactId>-->
+<!--					<groupId>org.junit.vintage</groupId>-->
+<!--				</exclusion>-->
+<!--				<exclusion>-->
+<!--					<artifactId>mockito-junit-jupiter</artifactId>-->
+<!--					<groupId>org.mockito</groupId>-->
+<!--				</exclusion>-->
+<!--			</exclusions>-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
