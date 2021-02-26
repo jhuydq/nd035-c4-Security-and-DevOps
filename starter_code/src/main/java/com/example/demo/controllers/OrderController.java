@@ -34,24 +34,29 @@ public class OrderController {
 	
 	@PostMapping("/submit/{username}")
 	public ResponseEntity<UserOrder> submit(@PathVariable String username) {
+		log.info("Class: OrderController method: summit - Request: username= {}",username);
+
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
-			log.debug("OrderController.summit - Cannot find an user with username= {}",username);
+			log.debug("Class: OrderController method: summit - Response: NOT_FOUND username= {}",username);
 			return ResponseEntity.notFound().build();
 		}
 		UserOrder order = UserOrder.createFromCart(user.getCart());
 		orderRepository.save(order);
-		log.info("OrderController.summit - username with id {} summit order successfully! ", user.getId());
+		log.info("Class: OrderController method: summit - Response: OK for username= {}", username);
 		return ResponseEntity.ok(order);
 	}
 	
 	@GetMapping("/history/{username}")
 	public ResponseEntity<List<UserOrder>> getOrdersForUser(@PathVariable String username) {
+		log.info("Class: OrderController method: getOrdersForUser - Request: username= {}",username);
+
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
-			log.debug("OrderController.getOrdersForUser - Cannot find an user with username= {}",username);
+			log.debug("Class: OrderController method: getOrdersForUser - Response: NOT_FOUND username= {}",username);
 			return ResponseEntity.notFound().build();
 		}
+		log.info("Class: OrderController method: getOrdersForUser - Response: OK for username= {}", username);
 		return ResponseEntity.ok(orderRepository.findByUser(user));
 	}
 }

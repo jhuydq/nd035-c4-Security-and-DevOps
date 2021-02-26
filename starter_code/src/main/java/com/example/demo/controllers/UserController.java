@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
-	
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -41,26 +40,23 @@ public class UserController {
 	
 	@PostMapping("/create")
 	public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
-		log.info("username set info : {}", createUserRequest.getUsername());
+		log.info("Class: UserController method: createUser - Request: username= {}", createUserRequest.getUsername());
 
 		User user = new User();
 		user.setUsername(createUserRequest.getUsername());
-
 
 		Cart cart = new Cart();
 		cartRepository.save(cart);
 		user.setCart(cart);
 		if(createUserRequest.getPassword().length()<7 ||
 				!createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())){
-			//System.out.println("Error - Either length is less than 7 or pass and conf pass do not match. Unable to create ",
-			//		createUserRequest.getUsername());
-			log.debug("Unable to create username= {}. Either length is less than 7 or pass and conf pass do not match.", createUserRequest.getUsername());
+			log.debug("Class: UserController method: createUser - Response: BAD_REQUEST . Either length is less than 7 or pass and conf pass do not match.");
 			return ResponseEntity.badRequest().build();
 		}
 		user.setPassword(bCryptPasswordEncoder.encode(createUserRequest.getPassword()));
 		userRepository.save(user);
 
-		log.info("User {} created successfully.", createUserRequest.getUsername());
+		log.info("Class: UserController method: createUser - Response: OK ");
 		return ResponseEntity.ok(user);
 	}
 	
